@@ -1,0 +1,105 @@
+:root {
+  /* Colors */
+  --black: #2A2A2A;
+  --dark-gray: #7D7D7D;
+  --gray: #E5E5E5;
+  --light-gray: #F3F3F3;
+  --white: 	#FFFAFA;
+
+  /* fonts */
+  --heading: "Libre Baskerville", serif;
+  --bold: 700;
+  --normal: 400;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  font-weight: var(--bold);
+}
+
+h3 {
+  font-weight: var(--normal);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  border-bottom: 1px solid var(--gray);
+}
+
+header button {
+  border: none;
+  background: transparent;
+  font-family: var(--heading);
+  font-size: 12px;
+  color: var(--dark-gray);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+header button:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 1500px;
+  width: 1500px;
+  margin: 40px 0;
+}
+
+.gallery-artist {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 300px;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.text-wrapper {
+  position: relative;
+  bottom: 70px;
+  padding: 2px 2px 2px 15px;
+  background: rgba(0, 0, 0, 40%);
+  pointer-events: none;
+}
+
+.text-wrapper h3 {
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.text-wrapper p {
+  margin-top: 4px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--light-gray);
+}
+
+.gallery-artist img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.gallery-artist img:hover {
+  cursor: pointer;
+}

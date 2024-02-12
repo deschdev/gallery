@@ -32,6 +32,8 @@ h3 {
 header {
   display: flex;
   justify-content: space-between;
+  max-width: 1330px;
+  margin: 0 auto 40px auto;
   padding: 30px;
   border-bottom: 1px solid var(--gray);
 }
@@ -50,19 +52,14 @@ header button:hover {
   text-decoration: underline;
 }
 
-main {
-  max-width: 1500px;
-  margin: 0 auto;
-}
-
 .flex-container {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-between;
-  height: 1500px;
-  width: 1500px;
-  margin: 40px 0;
+  height: 1375px;
+  width: 1375px;
+  margin: 20px auto;
 }
 
 .gallery-artist {

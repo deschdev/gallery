@@ -20,44 +20,20 @@
       
     </section>
 
-    <section class="slideshow">
-      <header>
+    <section id="SLIDESHOW" class="slideshow hide">
+      <header id="slideshow-header">
         <h1>gallery.</h1>
-        <button id="start-slideshow">STOP SLIDESHOW</button>
+        <button id="stop-slideshow">STOP SLIDESHOW</button>
       </header>
-      <div class="slideshow-triple-split">
-        <div class="left">
-          <img src="./assets/starry-night/hero-small.jpg" alt="">
-          <button class="open-lightbox">VIEW IMAGE</button>
-        </div>
-        <div class="middle">
-          <div class="artist-title">
-            <h2>Starry Night</h2>
-            <h3>Vincent Van Gogh</h3>
-          </div>
-          <img src="./assets/starry-night/artist.jpg" alt="">
-        </div>
-        <div class="right">
-          <h2>1889</h2>
-          <p>Although The Starry Night was painted during the day in Van Gogh's ground-floor studio, it would be inaccurate to state that the picture was painted from memory. The view has been identified as the one from his bedroom window, facing east, a view which Van Gogh painted variations of no fewer than twenty-one times, including The Starry Night. "Through the iron-barred window," he wrote to his brother, Theo, around 23 May 1889, "I can see an enclosed square of wheat ... above which, in the morning, I watch the sun rise in all its glory."</p>
-          <a href="#">GO TO SOURCE</a>
-        </div>
-      </div>
-      <progress id="progress-bar" value="6" max="100"> 6% </progress>
-      <div class="control-display">
-        <div class="control-footer">
-          <div class="control-text">
-            <h3>Starry Night</h3>
-            <h4>Vincent Van Gogh</h4>
-          </div>
-          <div class="slideshow-controls">
-            <button class="prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M16 470.7L0 480V461.5 50.5 32l16 9.3L368.1 246.7 384 256l-15.9 9.3L16 470.7zM352.2 256L16 59.9V452.1L352.2 256z"/></svg></button>
-            <button class="next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M16 470.7L0 480V461.5 50.5 32l16 9.3L368.1 246.7 384 256l-15.9 9.3L16 470.7zM352.2 256L16 59.9V452.1L352.2 256z"/></svg></button>
-          </div>
-        </div>
+    </section>
+
+    <section class="image-modal hide">
+      <div class="modal-overlay"></div>
+      <div class="modal-image-container">
+        <button>CLOSE</button>
+        <img src="./assets/starry-night/hero-small.jpg" alt="">
       </div>
     </section>
-    
   </main>
 </body>
 </html>

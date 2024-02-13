@@ -4,7 +4,7 @@
   --dark-gray: #7D7D7D;
   --gray: #E5E5E5;
   --light-gray: #F3F3F3;
-  --white: 	#FFFAFA;
+  --white: 	#FFFFFF;
 
   /* fonts */
   --heading: "Libre Baskerville", serif;
@@ -102,17 +102,39 @@ header button:hover {
 
 /* Slideshow */
 
-.slideshow {
-  width: 1375px;
-  margin: 20px auto;
+#SLIDESHOW {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: var(--white);
+  transition: all 0.5s cubic-bezier(0, 0, 0.21, 1);
 }
 
 .slideshow header {
   margin-bottom: 100px;
 }
 
+.slideshow header h1 {
+  font-size: 32px;
+}
+
+.slideshow header button {
+  border: none;
+  background: transparent;
+  font-family: var(--heading);
+  font-size: 12px;
+  color: var(--dark-gray);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
 .slideshow-triple-split {
   display: flex;
+  flex-wrap: wrap;
+  max-width: 1375px;
+  margin: 35px auto;
   margin-bottom: 74px;
 }
 
@@ -153,7 +175,7 @@ header button:hover {
   right: 10%;
   width: 445px;
   height: 238px;
-  background-color: white;
+  background-color: var(--white);
   z-index: 2;
 }
 
@@ -164,8 +186,8 @@ header button:hover {
 
 .middle .artist-title h2 {
   width: 50%;
-  margin-bottom: 24px;
-  font-size: 56px;
+  margin-block: 24px;
+  font-size: 36px;
 }
 
 .middle .artist-title h3 {
@@ -207,12 +229,18 @@ header button:hover {
   bottom: -80px;
   font-size: 9px;
   letter-spacing: 2px;
-  color: var(--dark-gray)
+  color: var(--dark-gray);
+  text-decoration: none;
+}
+
+.right a:hover {
+  text-decoration: underline;
 }
 
 /* Progress Bar */
 
 progress {
+  margin-top: 75px;
   width: 100%;
   height: 1px;
   accent-color: var(--black);
@@ -229,11 +257,13 @@ progress::-webkit-progress-bar {
 .control-footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
+  align-items: center;
+  margin: 25px auto;
 }
 
 .control-text h3 {
   font-size: 18px;
+  font-weight: var(--bold);
 }
 
 .control-text h4 {
@@ -263,4 +293,52 @@ progress::-webkit-progress-bar {
   width: 25px;
   height: 24px;
   fill: var(--black);
+}
+
+/* Image Modal */
+
+.image-modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1375px;
+  height: 100vh; 
+  margin: 20px auto;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  opacity: .85;
+  z-index: 1;
+}
+
+.modal-image-container button {
+  position: absolute;
+  top: 15%;
+  right: 26%;
+  z-index: 3;
+  background: transparent;
+  border: none;
+  font-family: var(--heading);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.modal-image-container img {
+  position: relative;
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.hide {
+  display: none;
 }

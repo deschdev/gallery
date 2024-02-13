@@ -7,7 +7,6 @@ export const fetchData = async () => {
     const json = await response.json();
     
     json.forEach((art, index) => {
-      console.log("artist index:", index);
       const div = document.createElement("div");
       div.className = "artist gallery-artist";
       div.innerHTML = `

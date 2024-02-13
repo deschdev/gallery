@@ -1,6 +1,6 @@
 :root {
   /* Colors */
-  --black: #2A2A2A;
+  --black: #000000;
   --dark-gray: #7D7D7D;
   --gray: #E5E5E5;
   --light-gray: #F3F3F3;
@@ -56,7 +56,6 @@ header button:hover {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  justify-content: space-between;
   height: 1375px;
   width: 1375px;
   margin: 20px auto;
@@ -99,4 +98,169 @@ header button:hover {
 
 .gallery-artist img:hover {
   cursor: pointer;
+}
+
+/* Slideshow */
+
+.slideshow {
+  width: 1375px;
+  margin: 20px auto;
+}
+
+.slideshow header {
+  margin-bottom: 100px;
+}
+
+.slideshow-triple-split {
+  display: flex;
+  margin-bottom: 74px;
+}
+
+.slideshow-triple-split .left,
+.slideshow-triple-split .middle,
+.slideshow-triple-split .right {
+  flex: 1;
+  position: relative;
+}
+
+/* left */
+
+.left img {
+  width: 475px;
+  height: 560px;
+  object-fit: cover;
+}
+
+.left .open-lightbox {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 152px;
+  padding-block: 10px;
+  font-family: var(--heading);
+  color: var(--white);
+  background-color: var(--black);
+  border: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* middle */
+
+.middle .artist-title {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 445px;
+  height: 238px;
+  background-color: white;
+  z-index: 2;
+}
+
+.middle .artist-title h2,
+.middle .artist-title h3 {
+  margin-left: 65px;
+}
+
+.middle .artist-title h2 {
+  width: 50%;
+  margin-bottom: 24px;
+  font-size: 56px;
+}
+
+.middle .artist-title h3 {
+  font-size: 15px;
+  color: var(--dark-gray);
+}
+
+.middle img {
+  position: absolute;
+  left: 30px;
+  bottom: -55px;
+}
+
+/* Right */
+
+.right {
+  align-self: center;
+}
+
+.right h2 {
+  position: absolute;
+  top: -140px;
+  z-index: -1;
+  font-size: 180px;
+  color: var(--light-gray);
+}
+
+.right p {
+  width: 300px;
+  height: 364px;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--dark-gray);
+}
+
+.right a {
+  display: block;
+  position: absolute;
+  bottom: -80px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--dark-gray)
+}
+
+/* Progress Bar */
+
+progress {
+  width: 100%;
+  height: 1px;
+  accent-color: var(--black);
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--light-gray);
+}
+
+.control-display {
+  width: 100%;
+}
+
+.control-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.control-text h3 {
+  font-size: 18px;
+}
+
+.control-text h4 {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.control-footer .prev,
+.control-footer .next {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slideshow-controls svg {
+  width: 25px;
+  height: 24px;
+  fill: var(--dark-gray);
+}
+
+.slideshow-controls .prev svg {
+  transform: scaleX(-1);
+}
+
+.slideshow-controls svg:hover {
+  width: 25px;
+  height: 24px;
+  fill: var(--black);
 }

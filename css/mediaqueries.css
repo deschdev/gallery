@@ -1,0 +1,53 @@
+@media screen and (max-width: 768px) {
+  .flex-container {
+    justify-content: center;
+    align-content: center;
+    height: initial;
+    width: initial;
+    margin: initial;
+  }
+
+  .gallery-artist {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Slideshow */
+
+  .slideshow-triple-split {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left img {
+    width: 327px;
+    height: 280px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  .left .open-lightbox {
+    top: 5%;
+    bottom: initial;
+  }
+
+  .middle .artist-title {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 280px;
+    height: 104px;
+    background-color: var(--white);
+    z-index: 2;
+  }
+
+  .middle img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .right h2 {
+    font-size: 100px;
+  }
+}

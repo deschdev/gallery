@@ -43,6 +43,7 @@ header button {
   background: transparent;
   font-family: var(--heading);
   font-size: 12px;
+  font-weight: var(--bold);
   color: var(--dark-gray);
   letter-spacing: 1px;
   cursor: pointer;
@@ -125,6 +126,7 @@ header button:hover {
   background: transparent;
   font-family: var(--heading);
   font-size: 12px;
+  font-weight: var(--bold);
   color: var(--dark-gray);
   letter-spacing: 1px;
   cursor: pointer;
@@ -157,6 +159,10 @@ header button:hover {
   position: absolute;
   bottom: 5%;
   left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   width: 152px;
   padding-block: 10px;
   font-family: var(--heading);
@@ -165,6 +171,7 @@ header button:hover {
   border: none;
   font-size: 10px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 /* middle */
@@ -181,7 +188,7 @@ header button:hover {
 
 .middle .artist-title h2,
 .middle .artist-title h3 {
-  margin-left: 65px;
+  margin-left: 36px;
 }
 
 .middle .artist-title h2 {
@@ -199,6 +206,7 @@ header button:hover {
   position: absolute;
   left: 30px;
   bottom: -55px;
+  object-fit: cover;
 }
 
 /* Right */
@@ -226,8 +234,8 @@ header button:hover {
 .right a {
   display: block;
   position: absolute;
-  bottom: -80px;
-  font-size: 9px;
+  bottom: -100px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: var(--dark-gray);
   text-decoration: none;
@@ -298,13 +306,14 @@ progress::-webkit-progress-bar {
 /* Image Modal */
 
 .image-modal {
-  position: relative;
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1375px;
-  height: 100vh; 
-  margin: 20px auto;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
 }
 
 .modal-overlay {
@@ -319,15 +328,17 @@ progress::-webkit-progress-bar {
 
 .modal-image-container button {
   position: absolute;
-  top: 15%;
-  right: 26%;
+  top: 95px;
+  right: 25%;
   z-index: 3;
   background: transparent;
   border: none;
   font-family: var(--heading);
   font-size: 14px;
+  font-weight: var(--bold);
   letter-spacing: 2px;
   color: var(--white);
+  cursor: pointer;
 }
 
 .modal-image-container img {
@@ -337,6 +348,7 @@ progress::-webkit-progress-bar {
   height: auto;
   margin: 0 auto;
   z-index: 3;
+  object-fit: cover;
 }
 
 .hide {

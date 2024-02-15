@@ -51,8 +51,9 @@ const artFetch = async () => {
         </div>
         <div class="right">
           <h2>${art.year}</h2>
-          <p>${art.description}</p>
-          <a href="${art.source}" target="_blank">GO TO SOURCE</a>
+          <p>${art.description}
+            <a href="${art.source}" target="_blank">GO TO SOURCE</a>
+          </p>
         </div>
         <progress id="progress-bar" value="6" max="100"> 6% </progress>
         <div class="control-display">

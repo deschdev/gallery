@@ -1,13 +1,15 @@
+// slideshow variables
 const galleryContent = document.querySelector(".gallery-container")
 const slideshowContainer = document.querySelector(".slideshow");
 const openSlideshowButton = document.querySelector("#start-slideshow");
 const closeSlideshowButton = document.querySelector("#stop-slideshow");
 const slideshowHeader = document.querySelector("#slideshow-header");
 
+/* Main slideshow functionality */
 export const slideshowFunctionality = () => {
   openSlideshowButton.addEventListener("click", openSlideshow);
   closeSlideshowButton.addEventListener("click", closeSlideshow);
-  artFetch();
+  slideshowFetch();
 }
 
 const openSlideshow = () => {
@@ -24,7 +26,8 @@ const closeSlideshow = () => {
   }
 }
 
-const artFetch = async () => {
+/* fetching the slideshow art data */
+const slideshowFetch = async () => {
   try {
     const response = await fetch("./data.json");
     const json = await response.json();
@@ -77,6 +80,12 @@ const artFetch = async () => {
       slideshowContainer.appendChild(slideshowHeader);
       slideshowContainer.appendChild(div);
 
+      /* incrementing and decrementing the progress button */
+      const progress = document.querySelector("#progress-bar");
+      progress.value = ((index + 1) / json.length) * 100;
+
+      /* Prev and Next slide */
+
       const prevSlide = document.querySelector(".prev");
       const nextSlide = document.querySelector(".next");
 
@@ -100,19 +109,24 @@ const artFetch = async () => {
         createSlide(slideCounter);
       });
 
-      // Lightbox
-      const section = document.createElement("section");
-      section.id = "LIGHTBOX";
-      section.className = "image-modal hide";
-      section.innerHTML = `
-        <div class="modal-overlay"></div>
-        <div class="modal-image-container">
+      /* Lightbox */
+      const imageModal = document.querySelector(".image-modal");
+      let imageDiv = document.querySelector(".modal-image-container");
+      
+      // checking if the imageDiv exists, if doesn't - we are creating a new div element
+      if (!imageDiv) {
+        imageDiv = document.createElement("div");
+        imageDiv.className = "modal-image-container";
+        imageModal.appendChild(imageDiv);
+      }
+
+      imageDiv.innerHTML = '';
+      imageDiv.innerHTML = `
           <button id="close-lightbox">CLOSE</button>
           <img id="lightbox-image" src="" alt="">
-        </div>
       `;
-      document.body.appendChild(section);
 
+      // lightbox variables
       const LIGHTBOX = document.querySelector("#LIGHTBOX");
       const openLightbox = document.querySelector("#open-lightbox");
       const closeLightbox = document.querySelector("#close-lightbox");
@@ -121,7 +135,9 @@ const artFetch = async () => {
 
       if (openLightbox) {
         openLightbox.addEventListener("click", () => {
+          // setting the image src
           lightboxImage.src = art.images.gallery;
+          // setting the image alt
           lightboxImage.alt = `art by: ${art.artist.name}`;
           LIGHTBOX.classList.remove("hide");
         });

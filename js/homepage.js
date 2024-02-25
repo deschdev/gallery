@@ -1,3 +1,4 @@
+import { openSlideshow } from "./slideshow.js";
 
 const galleryContainer = document.querySelector(".gallery-container");
 
@@ -18,8 +19,10 @@ export const artGallery = async () => {
         </div>
         <img src="${art.images.thumbnail}" alt="${art.name}">
       `;
-      galleryContainer.appendChild(anchor);
 
+      anchor.addEventListener("click", () => openSlideshow(index));
+
+      galleryContainer.appendChild(anchor);
     });
   } catch (error) {
     console.error("Error fetching data:", error);
